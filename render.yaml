@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: instagram-telegram-bot
+    env: python
+    pythonVersion: 3.11.9
+    buildCommand: "pip install -r requirements.txt && playwright install chromium"
+    startCommand: "python main.py"
+    envVars:
+      - key: TELEGRAM_TOKEN
+        sync: false
